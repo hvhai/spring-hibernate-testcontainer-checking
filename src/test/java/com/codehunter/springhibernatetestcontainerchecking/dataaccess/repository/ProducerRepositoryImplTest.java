@@ -1,6 +1,8 @@
 package com.codehunter.springhibernatetestcontainerchecking.dataaccess.repository;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.codehunter.springhibernatetestcontainerchecking.core.domain.Producer;
 import com.codehunter.springhibernatetestcontainerchecking.core.repository.ProducerRepository;
 import org.junit.jupiter.api.Test;
@@ -12,7 +14,6 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Testcontainers
