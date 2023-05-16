@@ -18,11 +18,14 @@ repositories {
 	mavenCentral()
 }
 
+extra["testcontainersVersion"] = "1.18.1"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.2.0")
 	implementation("org.mapstruct:mapstruct:1.5.5.Final")
+	implementation("org.assertj:assertj-core:3.24.2")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("com.mysql:mysql-connector-j")
@@ -30,6 +33,14 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.testcontainers:junit-jupiter")
+	testImplementation("org.testcontainers:mysql")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
+	}
 }
 
 tasks.withType<Test> {
