@@ -3,7 +3,6 @@ package com.codehunter.springhibernatetestcontainerchecking.dataaccess.repositor
 
 import com.codehunter.springhibernatetestcontainerchecking.core.domain.Producer;
 import com.codehunter.springhibernatetestcontainerchecking.core.repository.ProducerRepository;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Testcontainers
-public class ProducerRepositoryImplTest {
+class ProducerRepositoryImplTest {
 
     private final ProducerRepository producerRepository;
 
@@ -58,15 +57,8 @@ public class ProducerRepositoryImplTest {
         List<Producer> actual = producerRepository.getAll();
 
         // then
-        assertThat(actual).isNotNull();
-        assertThat(actual).hasSize(1);
+        assertThat(actual).isNotNull().hasSize(1);
         assertThat(actual.get(0).getId()).isNotNull();
         assertThat(actual.get(0).getName()).isEqualTo("test container");
-    }
-
-    @AfterAll
-    public static void cleanUp() throws InterruptedException {
-//        Thread.sleep(300);
-        System.out.println("test end");
     }
 }
