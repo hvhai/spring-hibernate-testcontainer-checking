@@ -18,7 +18,7 @@ repositories {
 	mavenCentral()
 }
 
-extra["testcontainersVersion"] = "1.18.2"
+extra["testcontainersVersion"] = "1.18.3"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
