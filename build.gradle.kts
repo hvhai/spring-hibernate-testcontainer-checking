@@ -23,7 +23,7 @@ extra["testcontainersVersion"] = "1.18.3"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.4.2")
+	implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.4.4")
 	implementation("org.mapstruct:mapstruct:1.5.5.Final")
 	implementation("org.assertj:assertj-core:3.24.2")
 	compileOnly("org.projectlombok:lombok")
