@@ -2,6 +2,7 @@ plugins {
 	java
 	id("org.springframework.boot") version "3.1.2"
 	id("io.spring.dependency-management") version "1.1.2"
+	id("net.rdrei.android.buildtimetracker") version "0.11.0"
 }
 
 group = "com.codehunter"
@@ -19,6 +20,32 @@ repositories {
 }
 
 extra["testcontainersVersion"] = "1.18.3"
+
+buildtimetracker {
+	reporters {
+		register("csv") {
+			options.run {
+				put("output", "$buildDir/times.csv")
+				put("append", "true")
+				put("header", "false")
+			}
+		}
+
+		register("summary") {
+			options.run {
+				put("ordered", "false")
+				put("threshold", "50")
+				put("header", "false")
+			}
+		}
+
+		register("csvSummary") {
+			options.run {
+				put("csv", "$buildDir/times.csv")
+			}
+		}
+	}
+}
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
