@@ -7,11 +7,14 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 @Testcontainers
 public class TestContainerBase {
     @Container
-    static MySQLContainer<?> mySQLContainer = new MySQLContainer<>("mysql:8.0.33");
+    static MySQLContainer<?> mySQLContainer = new MySQLContainer<>("mysql:8.0.33")
+            .withReuse(true);
 
     @DynamicPropertySource
     static void mySQLProperties(DynamicPropertyRegistry registry) {
