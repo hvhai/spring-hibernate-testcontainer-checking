@@ -10,7 +10,7 @@ Configuration:
 
   Loggers:
     Logger:
-      - name: com.happymoney.loanproduct
+      - name: com.codehunter.springhibernatetestcontainerchecking
         level: debug
         additivity: false
         AppenderRef:
