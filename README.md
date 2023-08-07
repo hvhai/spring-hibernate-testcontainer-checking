@@ -2,7 +2,7 @@
 
 1. Get mysql image
     ```shell
-    docker run --name spring-hibernate-testcontainer-checking -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pw -d mysql:8.0.33
+    docker run --name spring-hibernate-testcontainer-checking -p 3316:3306 -e MYSQL_ROOT_PASSWORD=pw -d mysql:8.0.33
     ```
 
 2. Config connection
@@ -31,5 +31,5 @@
 
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
     spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
-    spring.jpa.hibernate.ddl-auto=none 
+    spring.jpa.hibernate.ddl-auto=none
     ```
