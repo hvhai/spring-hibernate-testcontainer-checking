@@ -8,10 +8,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @Slf4j
-public class SpringHibernateTestcontainerCheckingApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringHibernateTestcontainerCheckingApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
