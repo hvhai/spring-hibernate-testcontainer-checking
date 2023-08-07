@@ -65,22 +65,34 @@ buildtimetracker {
 }
 
 dependencies {
+    // Spring
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.5.1")
-    implementation("org.mapstruct:mapstruct:1.5.5.Final")
-    implementation("org.assertj:assertj-core:3.24.2")
-    compileOnly("org.projectlombok:lombok")
-    runtimeOnly("com.h2database:h2")
-    implementation("com.mysql:mysql-connector-j")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-    annotationProcessor("org.projectlombok:lombok")
+
+    // Database
+    implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.5.1")
+    // H2
+    runtimeOnly("com.h2database:h2")
+    // MySql
+    implementation("com.mysql:mysql-connector-j")
+    testImplementation("org.testcontainers:mysql")
+
+    // Mapstruct
+    implementation("org.mapstruct:mapstruct:1.5.5.Final")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
+
+    // Lombok
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
     "integrationTestAnnotationProcessor"("org.projectlombok:lombok")
     testImplementation("org.projectlombok:lombok")
+
+    // Test
+    implementation("org.assertj:assertj-core:3.24.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("org.testcontainers:mysql")
 }
 
 dependencyManagement {
