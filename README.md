@@ -2,7 +2,7 @@
 
 1. Get mysql image
     ```shell
-    docker run --name spring-hibernate-testcontainer-checking -p 3316:3306 -e MYSQL_ROOT_PASSWORD=pw -d mysql:8.0.33
+    docker run --name spring-hibernate-testcontainer-checking -p 3316:3306 -e MYSQL_ROOT_PASSWORD=pw -d mysql:8.1.0
     ```
 
 2. Config connection
