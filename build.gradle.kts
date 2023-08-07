@@ -89,6 +89,10 @@ dependencies {
     "integrationTestAnnotationProcessor"("org.projectlombok:lombok")
     testImplementation("org.projectlombok:lombok")
 
+    // Logging
+    implementation("org.apache.logging.log4j:log4j-api:2.20.0")
+    implementation("org.apache.logging.log4j:log4j-core:2.20.0")
+
     // Test
     implementation("org.assertj:assertj-core:3.24.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
