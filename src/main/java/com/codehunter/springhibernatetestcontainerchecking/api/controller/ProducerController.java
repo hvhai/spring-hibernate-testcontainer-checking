@@ -36,13 +36,13 @@ public class ProducerController {
                 producerUseCase.getAllProducer()
                         .stream()
                         .map(producerMapper::toProducerDto)
-                        .collect(Collectors.toList()),
+                        .toList(),
                 HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/{id}")
     ResponseEntity<Void> delete(@PathVariable Long id) {
         producerUseCase.deleteProducer(id);
-        return new ResponseEntity(HttpStatus.OK);
+        return ResponseEntity.ok().build();
     }
 }
