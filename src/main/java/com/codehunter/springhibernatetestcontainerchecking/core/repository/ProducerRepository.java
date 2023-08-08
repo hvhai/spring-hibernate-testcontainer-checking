@@ -6,5 +6,8 @@ import java.util.List;
 
 public interface ProducerRepository {
     Producer save(Producer producer);
+
     List<Producer> getAll();
+
+    void delete(Long id);
 }
