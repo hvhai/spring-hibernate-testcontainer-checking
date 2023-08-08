@@ -6,13 +6,26 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 @Slf4j
 public class ProducerUseCase {
     private final ProducerRepository producerRepository;
-    public Producer create(Producer producer) {
+
+    public Producer createProducer(Producer producer) {
         log.info("create producer {}", producer);
         return producerRepository.save(producer);
+    }
+
+    public List<Producer> getAllProducer() {
+        log.info("get all producers");
+        return producerRepository.getAll();
+    }
+
+    public void deleteProducer(Long id) {
+        log.info("delete producer with id: {}", id);
+        producerRepository.delete(id);
     }
 }

@@ -32,4 +32,9 @@ public class ProducerRepositoryImpl implements ProducerRepository {
                 .map(producerMapper::toProducerFromDao)
                 .toList();
     }
+
+    @Override
+    public void delete(Long id) {
+        jpaProducerRepository.deleteById(id);
+    }
 }
