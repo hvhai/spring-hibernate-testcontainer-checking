@@ -15,7 +15,17 @@ Configuration:
         additivity: false
         AppenderRef:
           - ref: Console_Appender
+      - name: com.zaxxer.hikari
+        level: DEBUG
+        additivity: false
+        AppenderRef:
+          - ref: Console_Appender
+      - name: org.springframework
+        level: DEBUG
+        additivity: false
+        AppenderRef:
+          - ref: Console_Appender
     Root:
-      level: error
+      level: DEBUG
       AppenderRef:
         - ref: Console_Appender
