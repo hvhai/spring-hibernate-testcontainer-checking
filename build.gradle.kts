@@ -37,7 +37,7 @@ repositories {
     mavenCentral()
 }
 
-extra["testcontainersVersion"] = "1.18.3"
+extra["testcontainersVersion"] = "1.19.0"
 
 buildtimetracker {
     reporters {
