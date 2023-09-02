@@ -1,4 +1,7 @@
 version: "3.8"
+networks:
+  back-tier:
+
 services:
   my-sql:
     image: mysql:8.1.0
@@ -10,3 +13,18 @@ services:
     ports:
       - "3316:3306"
     command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+    networks:
+      - back-tier
+
+  prometheus:
+    image: prom/prometheus:v2.46.0
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./data/prometheus/config:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - "9090:9090"
+    networks:
+      - back-tier
