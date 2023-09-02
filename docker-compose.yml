@@ -28,3 +28,20 @@ services:
       - "9090:9090"
     networks:
       - back-tier
+  grafana:
+    image: grafana/grafana-oss:10.1.1
+    pull_policy: always
+    container_name: grafana
+    restart: unless-stopped
+    user: "root"
+    volumes:
+      - ./data/grafana:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SERVER_DOMAIN=localhost
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - back-tier
