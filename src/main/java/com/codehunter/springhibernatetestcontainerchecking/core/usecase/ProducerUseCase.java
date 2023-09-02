@@ -3,14 +3,14 @@ package com.codehunter.springhibernatetestcontainerchecking.core.usecase;
 import com.codehunter.springhibernatetestcontainerchecking.core.domain.Producer;
 import com.codehunter.springhibernatetestcontainerchecking.core.repository.ProducerRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-@Slf4j
+@Log4j2
 public class ProducerUseCase {
     private final ProducerRepository producerRepository;
 
