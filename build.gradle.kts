@@ -72,7 +72,7 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
     // Database
-    implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.5.2")
+    implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.5.3")
     // H2
     runtimeOnly("com.h2database:h2")
     // MySql
