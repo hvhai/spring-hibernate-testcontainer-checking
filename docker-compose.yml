@@ -29,7 +29,7 @@ services:
     networks:
       - back-tier
   grafana:
-    image: grafana/grafana-oss:10.1.4
+    image: grafana/grafana-oss:10.1.5
     pull_policy: always
     container_name: grafana
     restart: unless-stopped
