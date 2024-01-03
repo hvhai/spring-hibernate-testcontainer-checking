@@ -1,7 +1,7 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.1.4"
-    id("io.spring.dependency-management") version "1.1.3"
+    id("org.springframework.boot") version "3.2.1"
+    id("io.spring.dependency-management") version "1.1.4"
     id("net.rdrei.android.buildtimetracker") version "0.11.0"
     id("io.freefair.lombok") version "8.4"
 }
@@ -37,7 +37,7 @@ repositories {
     mavenCentral()
 }
 
-extra["testcontainersVersion"] = "1.19.1"
+//extra["testcontainersVersion"] = "1.19.1"
 
 buildtimetracker {
     reporters {
@@ -96,6 +96,7 @@ dependencies {
     // Test
     implementation("org.assertj:assertj-core:3.24.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
 
     // monitoring
@@ -103,11 +104,11 @@ dependencies {
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 }
 
-dependencyManagement {
-    imports {
-        mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
-    }
-}
+//dependencyManagement {
+//    imports {
+//        mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
+//    }
+//}
 
 tasks {
     test {
