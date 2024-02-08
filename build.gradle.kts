@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.2.1"
+    id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.4"
     id("net.rdrei.android.buildtimetracker") version "0.11.0"
     id("io.freefair.lombok") version "8.4"
@@ -72,7 +72,7 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
     // Database
-    implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.6.0")
+    implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.7.2")
     // H2
     runtimeOnly("com.h2database:h2")
     // MySql
@@ -90,11 +90,11 @@ dependencies {
     testImplementation("org.projectlombok:lombok")
 
     // Logging
-    implementation("org.apache.logging.log4j:log4j-api:2.21.0")
-    implementation("org.apache.logging.log4j:log4j-core:2.21.0")
+    implementation("org.apache.logging.log4j:log4j-api:2.22.1")
+    implementation("org.apache.logging.log4j:log4j-core:2.22.1")
 
     // Test
-    implementation("org.assertj:assertj-core:3.24.2")
+    implementation("org.assertj:assertj-core:3.25.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")

@@ -17,7 +17,7 @@ services:
       - back-tier
 
   prometheus:
-    image: prom/prometheus:v2.47.2
+    image: prom/prometheus:v2.49.1
     container_name: prometheus
     restart: unless-stopped
     volumes:
@@ -29,7 +29,7 @@ services:
     networks:
       - back-tier
   grafana:
-    image: grafana/grafana-oss:10.1.5
+    image: grafana/grafana-oss:10.3.1
     pull_policy: always
     container_name: grafana
     restart: unless-stopped
