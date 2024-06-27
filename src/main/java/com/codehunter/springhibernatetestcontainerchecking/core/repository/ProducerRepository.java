@@ -10,4 +10,6 @@ public interface ProducerRepository {
     List<Producer> getAll();
 
     void delete(Long id);
+
+    public void findAndUpdateProducer(Long id);
 }

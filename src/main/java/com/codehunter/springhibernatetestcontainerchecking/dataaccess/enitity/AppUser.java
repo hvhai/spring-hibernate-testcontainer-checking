@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "USERS")
-@PrimaryKeyJoinColumn(name = "PERSION_ID")
+@PrimaryKeyJoinColumn(name = "PERSON_ID")
 public class AppUser extends Person {
     @Column(name = "LOGIN")
     private String login;

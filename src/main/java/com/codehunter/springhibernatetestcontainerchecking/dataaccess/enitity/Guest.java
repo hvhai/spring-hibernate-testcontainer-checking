@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "GUESTS")
-@PrimaryKeyJoinColumn(name = "PERSION_ID")
+@PrimaryKeyJoinColumn(name = "PERSON_ID")
 public class Guest extends Person {
     @Column(name = "TEMPORARY_NAME")
     private String tempName;

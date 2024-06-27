@@ -6,9 +6,9 @@ import com.codehunter.springhibernatetestcontainerchecking.dataaccess.enitity.Pr
 import com.codehunter.springhibernatetestcontainerchecking.dataaccess.mapper.ProducerDataAccessMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,14 +18,12 @@ public class ProducerRepositoryImpl implements ProducerRepository {
 
 
     @Override
-    @Transactional
     public Producer save(Producer producer) {
         ProducerDAO dao = jpaProducerRepository.save(producerMapper.toProducerDAO(producer));
         return producerMapper.toProducerFromDao(dao);
     }
 
     @Override
-    @Transactional
     public List<Producer> getAll() {
         List<ProducerDAO> result = jpaProducerRepository.getListProducer();
         return result.stream()
@@ -36,5 +34,15 @@ public class ProducerRepositoryImpl implements ProducerRepository {
     @Override
     public void delete(Long id) {
         jpaProducerRepository.deleteById(id);
+    }
+
+    @Override
+    public void findAndUpdateProducer(Long id) {
+        Optional<ProducerDAO> producer = jpaProducerRepository.findById(id);
+        if (producer.isPresent()) {
+            ProducerDAO producerDAO = producer.get();
+            producerDAO.setName("updated");
+            jpaProducerRepository.save(producerDAO);
+        }
     }
 }

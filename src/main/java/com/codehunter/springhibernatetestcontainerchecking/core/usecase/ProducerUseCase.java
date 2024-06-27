@@ -2,15 +2,20 @@ package com.codehunter.springhibernatetestcontainerchecking.core.usecase;
 
 import com.codehunter.springhibernatetestcontainerchecking.core.domain.Producer;
 import com.codehunter.springhibernatetestcontainerchecking.core.repository.ProducerRepository;
+import jakarta.persistence.LockModeType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Component
 @RequiredArgsConstructor
 @Log4j2
+@Transactional(isolation = Isolation.SERIALIZABLE)
 public class ProducerUseCase {
     private final ProducerRepository producerRepository;
 
@@ -27,5 +32,11 @@ public class ProducerUseCase {
     public void deleteProducer(Long id) {
         log.info("delete producer with id: {}", id);
         producerRepository.delete(id);
+    }
+
+    @Lock(LockModeType.PESSIMISTIC_READ)
+    public void findAndUpdateProducer(Long id) {
+        log.info("Find and update with id {}", id);
+        producerRepository.findAndUpdateProducer(id);
     }
 }
