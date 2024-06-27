@@ -33,3 +33,18 @@
     spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
     spring.jpa.hibernate.ddl-auto=none
     ```
+3. Create a procedure
+   ```sql
+   DROP PROCEDURE IF EXISTS findAllProducerBefore;
+   DELIMITER $	
+   CREATE PROCEDURE findAllProducerBefore(IN selectDate DATE)
+   BEGIN
+       SELECT name, birthDate 
+       FROM producer
+       WHERE DATE(birthDate) < selectDate;
+   END $
+   DELIMITER ; 
+
+   call findAllProducerBefore('1998-1-1');
+
+   ```

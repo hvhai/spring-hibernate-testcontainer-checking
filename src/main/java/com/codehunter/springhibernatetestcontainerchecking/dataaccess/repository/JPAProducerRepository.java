@@ -12,4 +12,6 @@ public interface JPAProducerRepository extends JpaRepository<ProducerDAO, Long> 
 
     @Query("select p from Producer p")
     List<ProducerDAO> getListProducer();
+
+
 }

@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity(name = "Producer")
 @Table(name = "producer")
 @Setter
@@ -16,4 +18,5 @@ public class ProducerDAO {
     @Tsid
     private Long id;
     private String name;
+    private LocalDate birthdate;
 }

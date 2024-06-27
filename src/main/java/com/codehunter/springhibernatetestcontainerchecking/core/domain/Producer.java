@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @Builder
 @Getter
 @Setter
@@ -16,4 +18,6 @@ import lombok.ToString;
 public class Producer {
     private Long id;
     private String name;
+    private LocalDate birthdate;
+
 }
