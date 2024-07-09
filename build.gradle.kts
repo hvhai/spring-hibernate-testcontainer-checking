@@ -1,7 +1,7 @@
 plugins {
     java
     id("org.springframework.boot") version "3.2.2"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("io.spring.dependency-management") version "1.1.6"
     id("net.rdrei.android.buildtimetracker") version "0.11.0"
     id("io.freefair.lombok") version "8.4"
 }
