@@ -90,8 +90,8 @@ dependencies {
     testImplementation("org.projectlombok:lombok")
 
     // Logging
-    implementation("org.apache.logging.log4j:log4j-api:2.22.1")
-    implementation("org.apache.logging.log4j:log4j-core:2.22.1")
+    implementation("org.apache.logging.log4j:log4j-api:2.24.0")
+    implementation("org.apache.logging.log4j:log4j-core:2.24.0")
 
     // Test
     implementation("org.assertj:assertj-core:3.25.3")
