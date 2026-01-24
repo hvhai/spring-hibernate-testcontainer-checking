@@ -94,7 +94,7 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-core:2.22.1")
 
     // Test
-    implementation("org.assertj:assertj-core:3.25.3")
+    implementation("org.assertj:assertj-core:3.27.7")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
